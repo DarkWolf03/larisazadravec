@@ -13,30 +13,54 @@
 
     <link rel="icon" type="image/x-icon" href="images/Lalisa_Logo.png">
 
-    <link href="css/styles.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <script src="script/scripts.js" defer></script>
 
 </head>
 
 
 <body>
 
-    <header>
 
-        <div id="header">
 
-            <div>
+        <header>
+
+            <div class="logo">
                 <img src="images/Lalisa_Logo.png" alt="logo">
             </div>
 
-            <div>
+            <div class="text-logo">
                 <img src="images/Lalisa_Text_logo.png" alt="logo">
             </div>
 
-            <div>
-                <p>socials</p>
+            <div class="header-socials">
+                <a href=""><img src="images/youtube.png" alt="youtube"></a>
+                <a href=""><img src="images/instagram.png" alt="instagram"></a>
+                <a href=""><img src="images/tiktok.png" alt="tiktok"></a>
+                <a href=""><img src="images/twitter.png" alt="twitter"></a>
             </div>
 
-        </div>
+            </header>
+
+        <nav>
+
+            <a href="index.html">HOME</a>
+            <a href="podstrani/about_me.html">O MENI</a>
+
+            <div class="dropdown">
+                <button class="dropbtn">DELAVNICE</button>
+                <div class="dropdown-content">
+                    <a href="#">INFORMACIJE</a>
+                    <a href="#">PRIJAVA</a>
+                    <a href="#">GALERIJA</a>
+                    <a href="#">FAQ</a>
+                </div>
+            </div>
+
+            <a href="">KONTAKT</a>
+
+
+        </nav>
 
 
 
@@ -47,11 +71,28 @@
 
 
 
+
 </body>
 
 
 
+<script>
 
+    const links = document.querySelectorAll("nav a");
+    const current = location.pathname.split("/").pop();
+
+    links.forEach(link => {
+        if (link.getAttribute("href") === current) {
+            link.classList.add("active");
+        }
+    });
+
+
+
+
+
+
+</script>
 
 
 </html>
