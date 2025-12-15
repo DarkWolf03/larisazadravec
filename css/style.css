@@ -1,0 +1,33 @@
+:root {
+
+    /* logo colors */
+	--primary: #e53034;
+    --mid: #8b2a2a;
+    --dark: #331314;
+
+	--white: white;
+    --black: black;
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    width: 100%;
+}
+
+
+
+
+/* HEADER */
+header {
+    width: 100%;
+}
+#header {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+}
