@@ -225,7 +225,8 @@ nav a:hover, .dropbtn:hover {
     color: var(--light);
     background-color: none;
 }
-.nav-selected {
+.nav-selected,
+.dropbtn .nav-selected {
     color: var(--primary);
 }
 
