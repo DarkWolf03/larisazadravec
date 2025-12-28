@@ -44,7 +44,11 @@ a {
 }
 
 h1 {
-
+    font-family: "Inter", sans-serif;
+    color: var(--primary);
+    font-weight: 700;
+  	font-size: 150px;
+    display: inline-block;
 }
 
 h2 {
@@ -326,31 +330,62 @@ footer a:hover {
 
 /* ----------------------- HOMEPAGE ----------------------- */
 .welcome {
-    min-height: 72vh;
-    background-image: url('../images/kwf_01.jpg');
+    min-height: 40vh;
+    background-image: url('../images/Banner.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: right;
+    padding-top: 20%;
+}
+.motto {
+    margin-top: 6%;
+    margin-bottom: 1%;
+    font-size: 30px;
+    font-style: italic;
+    color: var(--text-dark);
+}
+
+.welcome a {
+    padding: 1% 0%;
+}
+
+
+#welcome-intro {
+    background-color: var(--background-3);
+    padding: 3% 0;
+}
+
+.welcome-intro-div {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 5%;
+}
+.welcome-intro-div div {
+    min-height: 50vh;
+    background-color: var(--background-2);
+    text-align: left;
+    padding: 5% 14% 5% 5%;
+}
+.welcome-intro-text {
+    background-image: linear-gradient(90deg, var(--background-2), var(--background-1))
+}
+
+.welcome-intro-div h2 {
+    text-align: left;
+    width: 80%;
+}
+.welcome-intro-img {
+    background-image: url('../images/BoomShakaLaka_04.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
 }
 
-.welcome-intro-div {
-    display: grid;
-    grid-template-columns: 3fr 2fr;
-    gap: 10%;
-}
-
-.welcome-intro-div p {
-    border-radius: 20px;
-    border: solid var(--dark) 3px;
-    padding: 5%;
-}
-.welcome-intro-div img {
-    border-radius: 20px;
-}
-
 
 #welcome-about {
-    
+    background-color: var(--background-1);
+    margin-top: 0;
+    padding-top: 1%;
 }
 .welcome-about {
     display: grid;
@@ -450,7 +485,7 @@ footer a:hover {
 
 .home-signup-container {
     background: linear-gradient(rgba(21, 21, 21, 0.9), rgba(21, 21, 21, 0.95)), 
-    url('../images/BoomShakaLaka_01.png');
+        url('../images/BoomShakaLaka_01.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
