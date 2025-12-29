@@ -49,6 +49,10 @@ h1 {
     font-weight: 700;
   	font-size: 150px;
     display: inline-block;
+    text-shadow:
+        0 0 10px hsla(359, 78%, 54%, 0.4),
+        0 0 20px hsla(359, 78%, 54%, 0.1),
+        0 0 10px hsla(359, 100%, 70%, 0.456);
 }
 
 h2 {
@@ -406,6 +410,7 @@ footer a:hover {
 	.footer-main {
         display: grid;
         grid-template-columns: 2fr 1fr 1fr 1fr;
+        padding-top: 5%;
     }
 
     .footer-logo div {
@@ -448,6 +453,7 @@ footer a:hover {
             "f-us f-socials"
             "f-classes f-socials"
             "f-logo f-logo";
+        padding-top: 10%;
     }
 
     .footer-logo div {
@@ -461,6 +467,7 @@ footer a:hover {
 /* Small mobile */
 @media screen and (max-width: 600px) {
 	.footer-main {
+        padding-top: 20%;
         display: grid;
         grid-template-columns: 1fr;
         grid-template-areas: 
@@ -572,6 +579,11 @@ footer a:hover {
     border: solid 2px var(--primary);
     background-color: var(--background-1);
     padding: 10%;
+}
+
+.welcome-about p {
+    text-align: left;
+    line-height: 26px;
 }
 
     .welcome-about-1 {
@@ -849,28 +861,76 @@ footer a:hover {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    min-height: 50vh ;
+    min-height: 30vh ;
 
 }
 
 #about-intro h1 {
     display: inline-block;
-    margin-bottom: 5%;
-    padding-top: 20%;
+    margin-bottom: 6%;
+    padding-top: 25%;
 }
 
 #about-intro p {
     display: inline-block;
 }
 
+#about-intro div {
+    text-align: center;
+    background-color: rgba(13, 13, 13, 0.7);
+    border-radius: 15px;
+    padding: 3% 5%;
+    margin-top: 2%;
+    border-left: 5px solid var(--primary);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    width: 40%;
+    transition: 0.4s;
+}
+#about-intro div:hover {
+    transform: translateX(10px);
+    transition: 0.2s;
+    box-shadow: -10px 8px 20px rgba(0, 0, 0, 0.6);
+    background-color: rgba(13, 13, 13, 0.85);
+}
 
-#about-kwf-2023 {
+
+#about-introduction {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 5%;
+    grid-template-areas: 
+        "about-introduction-2 about-introduction-1";
+}
+    .about-introduction-1 {
+        grid-area: about-introduction-1;
+    }
+    .about-introduction-2 {
+        background-image: url('../images/BoomShakaLaka_02.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        border-radius: 10px;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.609);
+        transition: 0.5s;
+        grid-area: about-introduction-2;
+    }
+    .about-introduction-2:hover {
+        transform: scale(1.05);
+        transition: 0.2s;
+    }
+
+
+
+#about-kwf {
     background-color: var(--background-1);
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     grid-template-areas: 
-        "kwf-2023-txt kwf-2023-vid";
+        "kwf-2023-txt kwf-2023-txt kwf-2023-txt kwf-2023-vid kwf-2023-vid"
+        "kwf-2025-vid kwf-2025-vid kwf-2025-txt kwf-2025-txt kwf-2025-txt";
     gap: 10%;
+    padding-bottom: 10%;
+    padding-top: 5%;
 }
 
     .about-kwf-2023-1 {
@@ -880,15 +940,6 @@ footer a:hover {
     .about-kwf-2023-2 {
         grid-area: kwf-2023-vid;
     }
-
-#about-kwf-2025 {
-    background-color: var(--background-1);
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-    grid-template-areas: 
-        "kwf-2025-vid kwf-2025-txt";
-    gap: 10%;
-}
 
     .about-kwf-2025-1 {
         grid-area: kwf-2025-txt;
@@ -935,8 +986,246 @@ footer a:hover {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     background-color: var(--dark);
-    row-gap: 10%;
+    gap: 5%;
+    margin-bottom: 0%;
+    padding-bottom: 5%;
 }
+#about-video-promo iframe {
+    border-radius: 10px;
+}
+
+
+.about-motivation-bg {
+    background: linear-gradient(90deg, rgb(13, 13, 13,0.9), rgba(21, 21, 21, 0.5)), 
+        url('../images/Background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin-top: 0%;
+    padding: 3% 0;
+}
+
+#about-motivation {
+    margin: 0 25% 5% 25%;
+    border: solid 5px var(--primary);
+    border-radius: 20px;
+    background-color: var(--background-1);
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.69);
+}
+#about-motivation div {
+    margin: 2%;
+    border: solid 3px var(--primary);
+    border-radius: 15px;
+    padding: 5%;
+}
+
+#about-motivation p {
+    font-size: 17px;
+    line-height: 1.9;
+    margin-bottom: 40px;
+}
+
+.about-motivation-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 4%;
+    background-color: var(--background-1);
+    padding: 3% 5%;
+    border-radius: 20px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.709);
+}
+
+.about-motivation-box {
+    background-color: var(--background-2);
+    padding: 10%;
+    border-radius: 15px;
+    transition: 0.4s;
+    border-bottom: solid 5px var(--background-2)
+}
+
+.about-motivation-box:hover {
+    transform:translateY(-5px);
+    transition: 0.2s;
+    border-bottom: solid 5px var(--primary)
+}
+
+.about-motivation-box img{
+    width: 30%;
+    margin:0 35% 3% 35%;
+}
+.about-motivation-box h3{
+    text-align: center;
+    margin-top: 2%;
+}
+.about-motivation-box p{
+    text-align: center;
+    color: var(--text-dark);
+}
+
+
+
+.about-motivation-quote {
+    background: linear-gradient(rgba(21, 21, 21, 0.7), rgba(21, 21, 21, 0.7)), 
+        url('../images/LoveShakaLaka_08.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.about-motivation-quote p {
+    justify-content: center;
+    text-align: center;
+    font-size: 30px;
+    font-style: italic;
+    line-height: normal;
+    color: var(--text-dark)
+}
+.about-motivation-quote span {
+    font-size: 60px;
+    color: var(--light);
+    margin: 0 1%;
+    font-family: cursive;
+}
+
+.about-motivation-quote-container {
+    display: grid;
+    grid-template-columns: 1fr 5fr 1fr;
+    gap: 5%;
+    margin: 5% 19%;
+    width: 52%;
+    padding: 5% 5%;
+    font-size: 24px;
+    font-style: italic;
+    text-align: center;
+    background-color: rgba(21, 21, 21, 0.85);
+    border-radius: 15px;
+    border-top: 5px solid var(--primary);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Big tablet */
+@media screen and (max-width: 1300px) {
+
+    .about-motivation-quote-container {
+        grid-template-columns: 1fr 6fr 1fr;
+        margin: 5% 5%;
+        width: 80%;
+    }
+}
+
+/* Tablets */
+@media screen and (max-width: 1124px) {
+
+    #about-video-promo {
+        grid-template-columns: 1fr 1fr;
+        padding-top: 5%;
+        padding-bottom: 20%;
+    }
+
+    #about-kwf {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+            "kwf-2023-txt kwf-2025-txt"
+            "kwf-2023-vid kwf-2025-vid";
+        gap: 10%;
+        padding-bottom: 13%;
+        padding-top: 5%;
+    }
+
+    #about-motivation {
+        margin: 0 10% 5% 10%;
+        width: 80%
+    }
+
+    .about-motivation-quote-container {
+        display: grid;
+        grid-template-columns: 1fr 6fr 1fr;
+        gap: 5%;
+        margin: 5% 0%;
+        width: 90%;
+        padding: 5% 5%;
+    }
+    .about-motivation-quote p {
+        font-size: 20px;
+    }
+
+    #about-intro h1 {
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+    }
+}
+
+
+/* Between */
+@media screen and (max-width: 1000px) {
+
+    .about-motivation-container {
+        grid-template-columns: 1fr 1fr;
+        padding: 3% 5% 5% 5%;
+    }
+	
+
+}
+
+
+/* Mobile devices */
+@media screen and (max-width: 767px) {
+
+	#about-introduction {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 5%;
+        grid-template-areas: 
+            "about-introduction-1"
+            " about-introduction-2";
+        padding-top: 10%;
+        padding-bottom: 20%;
+    }
+
+    .about-introduction-2 {
+        min-height: 30vh;
+    }
+
+    #about-video-promo {
+        grid-template-columns: 1fr 1fr;
+        padding-top: 10%;
+        padding-bottom: 30%;
+    }
+
+    #about-kwf {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "kwf-2023-txt"
+            "kwf-2023-vid"
+            "kwf-2025-txt"
+            "kwf-2025-vid";
+        gap: 10%;
+        padding-bottom: 50%;
+        padding-top: 10%;
+    }
+
+    .about-motivation-container {
+        display: none;
+    }
+
+    .about-motivation-quote-container {
+        display: grid;
+        grid-template-columns: 1fr 6fr 1fr;
+        gap: 7%;
+        margin: 20% 0%;
+        width: 90%;
+        padding: 8% 5%;
+    }
+
+    
+}
+
+
+
+
 
 
 
@@ -1333,6 +1622,7 @@ ul {
     padding-bottom: 22%;
     border-radius: 20px;
     border: var(--primary) solid 4px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.6);
 }
     .contact-name {
         grid-area: c-name;
