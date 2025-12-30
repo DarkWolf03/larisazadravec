@@ -132,7 +132,8 @@ h4 {
 p,
 label,
 li,
-input {
+input,
+textarea {
   	font-family: "Roboto", sans-serif;
   	font-weight: 400;
   	letter-spacing: 1px;
@@ -989,13 +990,38 @@ footer a:hover {
 #about-video-promo {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    background-color: var(--dark);
+    background: linear-gradient(90deg, var(--dark), var(--mid), var(--dark));
     gap: 5%;
     margin-bottom: 0%;
     padding-bottom: 5%;
 }
+.about-video-promo {
+    background-color: var(--background-2);
+    border-radius: 15px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.4);
+    transition: 0.5s;
+}
+
+.about-video-promo:hover {
+    transform: scale(1.05);
+    transition: 0.2s;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.6);
+}
+
+.about-video-promo div {
+    padding: 5% 10%;
+}
+
+.about-video-promo h3 {
+    text-transform: none;
+    color: var(--text);
+}
+.about-video-promo p {
+    color: var(--text-dark);
+}
+
 #about-video-promo iframe {
-    border-radius: 10px;
+    border-radius: 15px 15px 0 0 ;
 }
 
 
@@ -1309,6 +1335,7 @@ textarea {
     border-radius: 20px;
     background-color: var(--background-2);
     border: solid 2px var(--primary);
+    color: var(--text);
 }
 
 .signup-box-1 > div {
