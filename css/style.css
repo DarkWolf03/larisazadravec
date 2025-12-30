@@ -784,6 +784,11 @@ footer a:hover {
     #home-signup p {
         width: 80%;
     }
+
+    #home-signup {
+        margin-top: 4%;
+        margin-bottom: 15%;
+    }
     
     .motto {
         margin-top: 8%;
@@ -895,6 +900,15 @@ footer a:hover {
         padding-top: 10%;
     }
 
+    #offers {
+        padding-bottom: 20%;
+    }
+
+    #home-signup {
+        margin-top: 10%;
+        margin-bottom: 25%;
+    }
+
 }
 
 
@@ -980,6 +994,7 @@ footer a:hover {
     background-color: var(--background-1);
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
     grid-template-areas: 
         "kwf-2023-txt kwf-2023-txt kwf-2023-txt kwf-2023-vid kwf-2023-vid"
         "kwf-2025-vid kwf-2025-vid kwf-2025-txt kwf-2025-txt kwf-2025-txt";
@@ -1204,8 +1219,8 @@ footer a:hover {
             "kwf-2023-txt kwf-2025-txt"
             "kwf-2023-vid kwf-2025-vid";
         gap: 5%;
-        padding-bottom: 18%;
-        padding-top: 5%;
+        padding-bottom: 7%;
+        padding-top: 10%;
     }
 
     .about-kwf-2023-2,
@@ -1286,6 +1301,7 @@ footer a:hover {
             "kwf-2025-txt"
             "kwf-2025-vid";
         padding-top: 10%;
+        padding-bottom: 15%;
         gap: 3%;
     }
 
@@ -1435,6 +1451,7 @@ ul {
     accent-color: var(--primary);
 }
 
+
 /* Tablets */
 @media screen and (max-width: 1124px) {
 	.signup-box-1 {
@@ -1468,6 +1485,8 @@ ul {
         margin-top: 5%;
         margin-bottom: 15%;
     }
+
+    
 
 }
 
@@ -1505,6 +1524,16 @@ ul {
 
 }
 
+/* Mobile devices */
+@media screen and (max-width: 500px) {
+
+	.signup-box-1 {
+        padding: 5% 5% 25% 5%;
+    }
+
+}
+
+
 
 
 
@@ -1519,7 +1548,7 @@ ul {
     display: grid;
     grid-template-columns: 1fr;
     gap: 10%;
-    margin-bottom: 5%;
+    margin-bottom: 10%;
 }
 
 .blog-content {
@@ -1571,7 +1600,10 @@ ul {
 /* Tablets */
 @media screen and (max-width: 1124px) {
 
-    
+    .blog-container {
+        margin-top: 5%;
+        margin-bottom: 15%;
+    }
     
 }
 
@@ -1588,6 +1620,12 @@ ul {
         border-radius: 0 0px 20px 20px;
     }
 
+    .blog-container {
+        margin-top: 10%;
+        margin-bottom: 20%;
+    }
+
+
 }
 
 /* ----------------------- BLOG - content ----------------------- */
@@ -1595,7 +1633,8 @@ ul {
     display: grid;
     grid-template-columns: 1fr 2fr;
     gap: 6%;
-    margin-bottom: 5%;
+    margin-bottom: 10%;
+    margin-top: 2%;
 }
 #blog-content h2 {
     font-size: 35px;
@@ -1661,9 +1700,8 @@ ul {
         margin-bottom: 15%;
         grid-template-areas: 
             "blog-main"
-            "blog-aside";
+            "blog-aside";        
     }
-
     .blog-main {
         grid-area: blog-main;
     }
@@ -1694,7 +1732,7 @@ ul {
     .blog-aside {
         grid-area: blog-aside;
         padding: 5% 15%;
-        margin-bottom: 15%;
+        margin-bottom: 20%;
     }
     
     .blog-aside {
@@ -1703,6 +1741,15 @@ ul {
         border-radius: 20px;
         border: solid 3px var(--primary);
         box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.604);
+    }
+
+}
+
+/* Small Mobile */
+@media screen and (max-width: 500px) {
+	
+    #blog-content {
+        margin-bottom: 25%;     
     }
 
 }
@@ -1724,7 +1771,7 @@ ul {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 5%;
-    margin-bottom: 5%;
+    margin-bottom: 8%;
     grid-template-areas: 
         "contact-aside contact-content";
 }
@@ -1829,10 +1876,10 @@ ul {
 }
 
 /* Big */
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1350px) {
 
     .contact-button .home-signup-button-1 {
-        margin-bottom: 10%;
+        margin-bottom: 20%;
     }
 
     
@@ -1858,6 +1905,10 @@ ul {
 
     .contact-button .home-signup-button-1 {
         margin-bottom: 0%;
+    }
+
+    #contact {
+        padding-bottom: 15%;
     }
     
 }
@@ -1912,6 +1963,10 @@ ul {
         grid-template-rows: 1fr 1fr;
     }
 
+    #contact {
+        margin-bottom: 25%;
+    }
+
 }
 
 /* Small Mobile */
@@ -1919,6 +1974,10 @@ ul {
 
     .contact-content form {
         padding-bottom: 60%
+    }
+
+    #contact {
+        margin-bottom: 30%;
     }
 
 }
@@ -2012,7 +2071,7 @@ ul {
 
     #faq {
         width: 70%;
-        margin: 0 15% 5% 15%;
+        margin: 6% 15% 10% 15%;
         display: grid;
     }
 
@@ -2020,17 +2079,12 @@ ul {
         margin-bottom: 5%;
     }
 
+
 }
 
 /* Between */
 @media screen and (max-width: 900px) {
 	
-    #faq {
-        width: 80%;
-        margin: 0 10% 5% 10%;
-        display: grid;
-    }
-
     .faq-answear {
         padding: 3% 6% 1% 6%;
     }
@@ -2042,12 +2096,12 @@ ul {
 	
     #faq {
         width: 90%;
-        margin: 0 5% 5% 5%;
+        margin: 10% 5% 20% 5%;
         display: grid;
     }
 
     .faq-answear {
-        padding: 3% 7% 1% 7%;
+        padding: 4% 9% 4% 9%;
     }
 
 }
@@ -2242,6 +2296,7 @@ ul {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 5%;
+    margin-bottom: 8%;
 }
 #info-for p,
 #info-for h2 {
@@ -2344,6 +2399,7 @@ ul {
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr 1fr;
         gap: 5%;
+        margin-bottom: 5%;
     }
 
     #info-basic {
@@ -2364,6 +2420,10 @@ ul {
 
     #info-contact {
         margin-top: 15%;
+    }
+
+    #info-basic li {
+        margin-left: 3%;
     }
 
 }
@@ -2401,6 +2461,22 @@ ul {
         transform: translateY(-8px);
     }
 
+    #info-for {
+        margin-bottom: 15%;
+    }
+
+    #info-basic h2 {
+        margin-top: 8%;
+    }
+
+    .info-basic div {
+        padding: 2% 10%;
+    }
+
+    #info-basic li {
+        margin-left: 0%;
+    }
+
 }
 
 /* Mobile devices */
@@ -2430,11 +2506,20 @@ ul {
         margin-top: 10%;
     }
 
+    .info-important {
+        margin-top: 5%;
+    }
+
     .info-contact-container {
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 1fr;
         gap: 10%;
         margin-bottom: 5%;
+    }
+
+    #info-contact {
+        padding-top: 10%;
+        padding-bottom: 15%;
     }
 
     #info-contact .home-signup-button-1 {
@@ -2491,5 +2576,8 @@ ul {
         height: 20vh;
     }
 
+    .info-important {
+        margin-top: 10%;
+    }
 
 }
