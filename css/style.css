@@ -139,6 +139,7 @@ input {
   	text-align: justify;
 	padding-bottom: 2%;
 	color: var(--text);
+    line-height: 25px;
 }
 
 
@@ -232,7 +233,8 @@ nav a:hover, .dropbtn:hover {
     background-color: none;
 }
 .nav-selected,
-.dropbtn .nav-selected {
+.dropbtn .nav-selected,
+.dropdown-content a .nav-selected {
     color: var(--primary);
 }
 
@@ -260,14 +262,16 @@ nav a:hover, .dropbtn:hover {
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #f1f1f1;
-    min-width: 160px;
+    background-color: var(--background-1);
+    min-width: 180px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
+    border-radius: 0px 0px 10px 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);;
 }
 
 .dropdown-content a {
-    color: black;
+    color: var(--mid);
     padding: 12px 16px;
     text-decoration: none;
     display: block;
@@ -1238,6 +1242,12 @@ footer a:hover {
 
 
 /* ----------------------- SIGN UP ----------------------- */
+.classes-padding {
+    width: 60%;
+    margin: 0 20% 5% 20%;
+    display: grid;
+}
+
 #signup {
     padding-top: 0;
 }
@@ -1354,6 +1364,12 @@ ul {
         text-align: left;
     }
 
+    .classes-padding {
+        width: 80%;
+        margin: 0 10% 5% 10%;
+        display: grid;
+    }
+
 
 }
 
@@ -1379,6 +1395,12 @@ ul {
     .signup-box-1 label {
         margin-top: 5%;
         margin-bottom: 0%;
+    }
+
+    .classes-padding {
+        width: 90%;
+        margin: 0 5% 5% 5%;
+        display: grid;
     }
     
 }
@@ -1430,7 +1452,7 @@ ul {
 }
 
 .blog-content-2 {
-    background-image: url('../images/Dance_practice_room.jpg');
+    background-image: url('../images/itzy-dance.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -1602,8 +1624,13 @@ ul {
     grid-template-columns: 1fr 1fr;
     gap: 5%;
     margin-bottom: 5%;
+    grid-template-areas: 
+        "contact-aside contact-content";
 }
 
+.contact-content {
+    grid-area: contact-content;
+}
 
 .contact-content form {
     display: grid;
@@ -1658,6 +1685,15 @@ ul {
 .contact-button .home-signup-button-1 {
     width: 20%;
     text-align: center;
+    margin-bottom: 5%;
+}
+
+.contact-aside {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-bottom: 10%;
+    grid-area: contact-aside;
 }
 
 .contact-aside-container {
@@ -1665,10 +1701,9 @@ ul {
     grid-template-columns: 1fr 13fr;
     gap: 10%;
     row-gap: 50%;
-    margin-top: 20%;
 }
 .contact-aside p {
-
+    margin-bottom: 10%;
     text-align: left;
     color: var(--text-dark)
 }
@@ -1698,26 +1733,36 @@ ul {
     width: 50px;
 }
 
+/* Big */
+@media screen and (max-width: 1200px) {
+
+    .contact-button .home-signup-button-1 {
+        margin-bottom: 10%;
+    }
+
+    
+}
+
 
 /* Tablets */
 @media screen and (max-width: 1124px) {
 
     #contact {
-        grid-template-columns: 1fr 2fr;
-    }
-    
-    .contact-socials {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 3%;
+        grid-template-columns: 1fr;
+        gap: 5%;
+        margin-bottom: 5%;
+        grid-template-areas: 
+            "contact-content"
+            "contact-aside";
     }
 
-    .contact-aside-container {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 10%;
-        row-gap: 50%;
-        margin-top: 20%;
+    .contact-aside p {
+        margin-bottom: 0%;
+    }
+
+    .contact-button .home-signup-button-1 {
+        margin-bottom: 0%;
     }
     
 }
@@ -1725,22 +1770,48 @@ ul {
 /* Mobile devices */
 @media screen and (max-width: 767px) {
 	
-    #contact {
+    .contact-socials {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10%;
+    }
+
+    .contact-aside-container {
+        display: grid;
+        grid-template-columns: 1fr 6fr;
+        gap: 10%;
+        row-gap: 50%;
+        margin-top: 20%;
+        padding-bottom: 30%;
+    }
+
+    .contact-button .home-signup-button-1 {
+        margin-bottom: 0%;
+    }
+
+    .contact-content form {
+        display: grid;
         grid-template-columns: 1fr;
+        grid-template-rows: repeat(9, 1fr);
+        gap: 5%;
         grid-template-areas: 
-            "contact-content"
-            "contact-aside";
-    }
+            "c-name-label"
+            "c-name"
 
-    .contact-aside {
-        grid-area: contact-aside;
-    }
+            "c-lastname-label"
+            "c-lastname"
 
-    .contact-content {
-        grid-area: contact-content;
+            "c-email-label"
+            "c-email"
+
+            "c-textarea-label"
+            "c-textarea"
+
+            "c-button";
     }
 
 }
+
 
 
 
@@ -1751,11 +1822,7 @@ ul {
 
 
 /* ----------------------- FAQ ----------------------- */
-#faq {
-    width: 60%;
-    margin: 0 20% 5% 20%;
-    display: grid;
-}
+
 .faq-container {
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
     border-radius: 30px;
@@ -1849,5 +1916,427 @@ ul {
         margin: 0 5% 5% 5%;
         display: grid;
     }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* ----------------------- INFO ----------------------- */
+#info {
+    margin-top: 3%;
+}
+
+.info-intro {
+    background-color: var(--background-1);
+    padding: 5% 10%;
+    border-radius: 15px;
+    border-left: solid 10px var(--primary);
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.388);
+    transition: 0.5s;
+    margin-top: 5%;
+}
+.info-intro:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+    transition: 0.3s;
+}
+
+.info-filming {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-areas: 
+        "info-filming-1 info-filming-3"
+        "info-filming-1 info-filming-2";
+    border: solid 3px var(--primary);
+    border-radius: 20px;
+    padding:0;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.388);
+    transition: 0.4s;
+}
+.info-filming:hover {
+    transform: scale(1.02);
+    transition: 0.2s;
+    box-shadow: 0px 0px 20px rgba(203, 0, 0, 0.388);
+}
+    .info-filming-1 {
+        background-image: url('../images/BoomShakaLaka_HalloweenInsta1.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        grid-area: info-filming-1;
+        margin: 0;
+        border-radius: 15px 0 0 15px;
+    }
+    .info-filming-2 {
+        grid-area: info-filming-2;
+        padding: 5% 5% 10% 10%;
+        margin: 0;
+    }
+
+    .info-filming-3 {
+        grid-area: info-filming-3;
+        padding: 5% 5% 5% 0;
+        text-align: right;
+        border-bottom: var(--primary) 1px solid;
+    }
+    .info-filming-3 a {
+        text-decoration: none;
+        margin-left: 5%;
+        color: var(--primary);
+        padding: 1% 4%;
+        border: solid 2px var(--primary);
+        border-radius: 30px;
+        transition: 0.4s;
+    }
+
+    .info-filming-3 a:hover {
+        color: var(--light);
+        border: solid 2px var(--light);
+        transition: 0.15s;
+    }
+
+
+#info-important {
+    margin-top: 5%;
+}
+
+.info-important {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5%;
+}
+
+.info-important p {
+    text-align: left;
+}
+.info-important div {
+    background-color: rgba(139, 42, 42, 0.2);
+    border: 4px solid var(--mid);
+    border-radius:15px;
+    padding: 5% 10%;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.489);
+    transition: 0.3s;
+}
+.info-important div:hover {
+    transform: translateY(-10px);
+    transition: 0.2s;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.6);
+    border: 4px solid var(--light);
+}
+
+
+
+#info-basic {
+    background-color: var(--background-1);
+    padding: 7% 20%;
+    width: 60%;
+}
+#info-basic p,
+#info-basic li {
+    text-align: left;
+}
+#info-basic li {
+    margin-left: 6%;
+}
+
+.info-basic {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 2%;
+}
+.info-basic a {
+    color: var(--primary);
+}
+.info-basic div {
+    background-color: var(--background-3);
+    border-radius: 15px;
+    padding: 10% 10%;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
+    border-bottom: solid var(--background-3) 5px;
+    transition: 0.3s;
+}
+.info-basic div:hover {
+    border-bottom: solid var(--primary) 5px;
+    transform: translateY(-2px);
+    transition: 0.3s;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+#info-contact {
+    background-color: var(--background-1);
+    padding: 5% 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.info-contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    width: 70%;
+    gap: 4%;
+    margin: 0 13% 3% 13%;
+}
+
+.info-contact-container div {
+    background-color: var(--background-2);
+    text-align: center;
+    padding: 3%;
+    border-radius: 5px;
+}
+#info-contact p {
+    text-align: center;
+}
+
+#info-contact .home-signup-button-1 {
+    width: 30%;
+    margin: 5% 31% 0 31%;
+}
+
+
+
+#info-for {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5%;
+}
+#info-for p,
+#info-for h2 {
+    text-align: left
+}
+.info-for-img {
+    background-image: url('../images/BoomShakaLaka_01.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 15px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
+}
+
+#info-msg div {
+    background-color: var(--background-3);
+    border-radius: 15px;
+    border: solid var(--primary) 2px;
+    padding: 3% 10%;
+    margin-top: 10%;
+    margin-bottom: 5%;
+}
+#info-msg p {
+    font-style: italic;
+    text-align: left;
+}
+
+
+#info-signup {
+    background-color: var(--background-1);
+    padding-bottom: 7%;
+    padding-top: 5%;
+}
+
+.info-signup {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5%;
+}
+
+.info-signup p, 
+.info-signup li {
+    text-align: left;
+}
+
+.info-signup-2 {
+    background-color: var(--background-3);
+    padding: 5% 10%;
+    border-radius: 20px;
+    border: solid var(--primary) 3px;
+}
+
+.info-signup-2 iframe {
+    border-radius: 15px;
+    margin-bottom: 10%;
+}
+
+.info-signup-link p,
+.info-signup-link h3 {
+    text-align: center;
+}
+
+.info-signup-link .home-signup-button-1 {
+    width: 30%;
+    margin: 0% 31% 5% 31%;
+}
+
+
+/* Tablets */
+@media screen and (max-width: 1124px) {
+
+    .info-filming-2 {
+        padding: 5% 10% 10% 10%;
+    }
+
+    .info-filming-3 {
+        padding: 5% 10% 5% 0;
+    }
+
+    .info-important {
+        grid-template-columns: 1fr;
+        gap: 5%;
+        margin-bottom: 5%;
+    }
+
+    .info-important p {
+        text-align: justify;
+    }
+    
+    .info-important div {
+        padding: 3% 10%;
+    }
+
+    .info-basic {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 5%;
+    }
+
+    #info-basic {
+        background-color: var(--background-1);
+        padding: 7% 10%;
+        width: 80%;
+    }
+
+    #info-contact .home-signup-button-1 {
+        width: 30%;
+        margin: 5% auto 0 auto;
+    }
+
+    .info-signup-link .home-signup-button-1 {
+        width: 40%;
+        margin: auto auto 5% auto;
+    }
+
+}
+
+/*between */
+@media screen and (max-width: 850px) {
+
+    .info-filming {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "info-filming-3"
+            "info-filming-2"
+            "info-filming-1";
+    }
+
+    .info-filming-1 {
+        background-image: url('../images/BoomShakaLaka_02.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: bottom;
+        border-radius: 0px 0 15px 15px;
+        height: 40vh
+    }
+
+    .info-filming-3 {
+        text-align: center;
+        padding: 5% 5% 5% 5%;
+    }
+
+    .info-filming-3 a {
+        margin: 0 2%;
+    }
+
+    .info-important div:hover {
+        transform: translateY(-8px);
+    }
+
+}
+
+/* Mobile devices */
+@media screen and (max-width: 767px) {
+	
+    .info-important div {
+        padding: 5% 10%;
+    }
+
+    .info-important {
+        margin-bottom: 10%;
+    }
+
+    #info-basic {
+        padding: 7% 5% 15% 5%;
+        width: 90%;
+    }
+
+    .info-basic {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        gap: 3%;
+    }
+
+    #info-important {
+        margin-top: 10%;
+    }
+
+    .info-contact-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 10%;
+        margin-bottom: 5%;
+    }
+
+    #info-contact .home-signup-button-1 {
+        width: 50%;
+        margin: 10% auto 0 auto;
+    }
+
+    .info-signup-link {
+        margin-bottom: 10%;
+    }
+
+    .info-signup-link .home-signup-button-1 {
+        width: 70%;
+        margin: auto auto 5% auto;
+    }
+
+    .info-signup {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 5%;
+        margin-bottom: 15%;
+    }
+
+
+}
+
+/* Small Mobile */
+@media screen and (max-width: 540px) {
+	
+    .info-filming-3 a {
+        font-size: 10px;
+        margin: 0 1%;
+    }
+
+    .info-filming-3 {
+        text-align: center;
+        padding: 5% 2%;
+    }
+
+    .info-signup-link .home-signup-button-1 {
+        width: 80%;
+        margin: auto auto 5% auto;
+    }
+
 
 }
