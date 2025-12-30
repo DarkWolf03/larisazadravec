@@ -151,6 +151,14 @@ textarea {
         }
 	}
 
+    /* Mobile devices */
+	@media screen and (max-width: 500px) {
+
+        h1 {
+            font-size: 60px;
+        }
+
+	}
 
 
 
@@ -1091,7 +1099,7 @@ footer a:hover {
     background-size: cover;
     background-position: center;
     margin-top: 0%;
-    padding: 3% 0;
+    padding: 5% 0;
 }
 
 #about-motivation {
@@ -1332,10 +1340,33 @@ footer a:hover {
     .about-motivation-container {
         display: none;
     }
+
+    .about-motivation-bg {
+        padding: 10% 0;
+    }
+
     
 }
 
+/* Mobile devices */
+@media screen and (max-width: 767px) {
 
+	
+    #about-kwf {
+        padding-top: 20%;
+        padding-bottom: 25%;
+    }
+
+    .about-motivation-bg {
+        padding: 12% 0;
+    }
+
+    #about-kwf {
+        grid-template-rows: 6r 1fr 6fr 1fr;
+    }
+
+    
+}
 
 
 
