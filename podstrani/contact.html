@@ -101,14 +101,39 @@
 
                 <div class="contact-social-plugin">
 
-                    <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-text="Hey! Check This Out!" data-via="zadravec_larisa" data-hashtags="kpop #kpopdance #slovenia" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                    <div>
+                        <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-text="Hey! Check This Out!" data-via="zadravec_larisa" data-hashtags="kpop #kpopdance #slovenia" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                    </div>
 
-                    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/sl_SI/sdk.js#xfbml=1&version=v24.0&appId=APP_ID"></script>
-                    <div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="" data-size=""><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Deli z drugimi</a></div>
+                    <div>
+                        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/sl_SI/sdk.js#xfbml=1&version=v24.0&appId=APP_ID"></script>
+                        <div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="" data-size=""><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Deli z drugimi</a></div>
+                    </div>
                 
-                    <script src="https://platform.linkedin.com/in.js" type="text/javascript" class="in-share-button">lang: en_US</script>
-                    <script type="IN/Share" data-url="https://www.linkedin.com"></script>
-                
+                    <div>
+                        <script src="https://platform.linkedin.com/in.js" type="text/javascript" class="in-share-button">lang: en_US</script>
+                        <script type="IN/Share" data-url="https://www.linkedin.com"></script>
+                    </div>
+
+                    <div>
+                        <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.7.7/kakao.min.js" integrity="sha384-tJkjbtDbvoxO+diRuDtwRO9JXR7pjWnfjfRn5ePUpl7e7RJCxKCwwnfqUAdXh53p" crossorigin="anonymous"></script>
+                        <script>
+                        Kakao.init('${JAVASCRIPT_KEY}'); // Enter your app's JavaScript key
+                        </script>
+
+                        <a id="add-channel-button" href="javascript:addChannel()">
+                        <img src="https://developers.kakao.com/tool/resource/static/img/button/channel/add/channel_add_small.png"
+                            alt="Add Channel button" />
+                        </a>
+
+                        <script>
+                        function addChannel() {
+                            Kakao.Channel.addChannel({
+                            channelPublicId: '${CHANNEL_PUBLIC_ID}',  // Enter the Public ID of the channel you want to add
+                            });
+                        }
+                        </script>
+                    </div>
 
 
                 </div>

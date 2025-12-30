@@ -94,6 +94,20 @@ h4 {
     margin: 0 15% 0% 15%;
 }
 
+p,
+label,
+li,
+input,
+textarea {
+  	font-family: "Roboto", sans-serif;
+  	font-weight: 400;
+  	letter-spacing: 1px;
+  	text-align: justify;
+	padding-bottom: 2%;
+	color: var(--text);
+    line-height: 25px;
+}
+
 	/* Tablets */
 	@media screen and (max-width: 1124px) {
 		h2 {
@@ -127,21 +141,16 @@ h4 {
             width: 90%;
             margin: 0 5% 5% 5%;
         }
+
+        p,
+        label,
+        li,
+        input,
+        textarea {
+            text-align: left;
+        }
 	}
 
-p,
-label,
-li,
-input,
-textarea {
-  	font-family: "Roboto", sans-serif;
-  	font-weight: 400;
-  	letter-spacing: 1px;
-  	text-align: justify;
-	padding-bottom: 2%;
-	color: var(--text);
-    line-height: 25px;
-}
 
 
 
@@ -847,6 +856,45 @@ footer a:hover {
         background-position: center;
     }
 
+    .welcome-intro-div div {
+        padding: 5% 14% 5% 10%;
+    }
+
+}
+
+/* Small Mobile */
+@media screen and (max-width: 550px) {
+	
+    .welcome-intro-div div {
+        padding: 5% 14% 5% 10%;
+    }
+
+    .welcome-intro-div {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 2fr 1fr;
+        grid-template-areas: 
+            "welcome-intro-text"
+            "welcome-intro-img";
+        gap: 0;
+        margin: 0 auto;
+        margin-top: -3%;
+    }
+
+    .welcome-intro-img {
+        grid-area: welcome-intro-img;
+        margin-bottom: -5%
+        
+    }
+
+    .welcome-intro-text {
+        grid-area: welcome-intro-text;
+    }
+
+    #welcome-about {
+        padding-top: 10%;
+    }
+
 }
 
 
@@ -905,6 +953,8 @@ footer a:hover {
     gap: 5%;
     grid-template-areas: 
         "about-introduction-2 about-introduction-1";
+    padding-top: 6%;
+    padding-bottom: 6%;
 }
     .about-introduction-1 {
         grid-area: about-introduction-1;
@@ -913,7 +963,7 @@ footer a:hover {
         background-image: url('../images/BoomShakaLaka_02.png');
         background-repeat: no-repeat;
         background-size: cover;
-        background-position: center;
+        background-position: bottom;
         border-radius: 10px;
         box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.609);
         transition: 0.5s;
@@ -989,9 +1039,10 @@ footer a:hover {
 
 #about-video-promo {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
     background: linear-gradient(90deg, var(--dark), var(--mid), var(--dark));
-    gap: 5%;
+    gap: 3%;
     margin-bottom: 0%;
     padding-bottom: 5%;
 }
@@ -1000,6 +1051,7 @@ footer a:hover {
     border-radius: 15px;
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.4);
     transition: 0.5s;
+    border: solid 5px var(--background-2);
 }
 
 .about-video-promo:hover {
@@ -1009,19 +1061,27 @@ footer a:hover {
 }
 
 .about-video-promo div {
-    padding: 5% 10%;
+    padding: 3% 7%;
 }
 
 .about-video-promo h3 {
     text-transform: none;
     color: var(--text);
+    margin-bottom: 3%;
+    line-height: 23px;
 }
 .about-video-promo p {
     color: var(--text-dark);
+    text-align: left;
+    line-height: 23px
 }
 
 #about-video-promo iframe {
-    border-radius: 15px 15px 0 0 ;
+    border-radius: 15px 15px 0 0;
+}
+
+#about-video-promo iframe:hover {
+    border-radius: 15px 15px 0 0;
 }
 
 
@@ -1149,8 +1209,9 @@ footer a:hover {
 
     #about-video-promo {
         grid-template-columns: 1fr 1fr;
-        padding-top: 5%;
-        padding-bottom: 20%;
+        grid-template-rows: 1fr 1fr 1fr;
+        padding-top: 10%;
+        padding-bottom: 15%;
     }
 
     #about-kwf {
@@ -1158,8 +1219,8 @@ footer a:hover {
         grid-template-areas: 
             "kwf-2023-txt kwf-2025-txt"
             "kwf-2023-vid kwf-2025-vid";
-        gap: 10%;
-        padding-bottom: 13%;
+        gap: 5%;
+        padding-bottom: 18%;
         padding-top: 5%;
     }
 
@@ -1172,7 +1233,7 @@ footer a:hover {
         display: grid;
         grid-template-columns: 1fr 6fr 1fr;
         gap: 5%;
-        margin: 5% 0%;
+        margin: 15% 0%;
         width: 90%;
         padding: 5% 5%;
     }
@@ -1185,6 +1246,7 @@ footer a:hover {
         justify-content: center;
         align-items: center;
         display: flex;
+        padding-top: 30%;
     }
 }
 
@@ -1195,6 +1257,7 @@ footer a:hover {
     .about-motivation-container {
         grid-template-columns: 1fr 1fr;
         padding: 3% 5% 5% 5%;
+        margin-bottom: 5%;
     }
 	
 
@@ -1227,29 +1290,36 @@ footer a:hover {
 
     #about-kwf {
         grid-template-columns: 1fr;
+        grid-template-rows: 2fr 1fr 2fr 1fr;
         grid-template-areas: 
             "kwf-2023-txt"
             "kwf-2023-vid"
             "kwf-2025-txt"
             "kwf-2025-vid";
-        gap: 10%;
-        padding-bottom: 50%;
         padding-top: 10%;
-    }
-
-    .about-motivation-container {
-        display: none;
     }
 
     .about-motivation-quote-container {
         display: grid;
         grid-template-columns: 1fr 6fr 1fr;
         gap: 7%;
-        margin: 20% 0%;
+        margin: 25% 0%;
         width: 90%;
         padding: 8% 5%;
     }
 
+    #about-intro h1 {
+        padding-top: 50%;
+    }
+
+
+    #about-video-promo {
+        display: none;
+    }
+
+    .about-motivation-container {
+        display: none;
+    }
     
 }
 
@@ -1381,6 +1451,7 @@ ul {
             "parent-label parent";
         row-gap: 1%;
         padding: 5% 5% 10% 5%;
+        margin-bottom: 6%;
     }
 
     .signup-box-1 > div {
@@ -1397,6 +1468,10 @@ ul {
         display: grid;
     }
 
+    #signup>.home-signup-button-1{
+        margin-top: 5%;
+        margin-bottom: 15%;
+    }
 
 }
 
@@ -1430,6 +1505,8 @@ ul {
         display: grid;
     }
     
+    
+
 }
 
 
@@ -1507,6 +1584,7 @@ ul {
 	
     .blog-content {
         grid-template-columns: 1fr;
+        margin-bottom: 10%;
     }
 
     .blog-content-2 {
@@ -1584,7 +1662,7 @@ ul {
         display: grid;
         grid-template-columns: 1fr;
         gap: 2%;
-        margin-bottom: 5%;
+        margin-bottom: 15%;
         grid-template-areas: 
             "blog-main"
             "blog-aside";
@@ -1751,13 +1829,7 @@ ul {
 
 .contact-social-plugin {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-}
-
-.twitter-share-button,
-.fb-share-button,
-.in-share-button {
-    width: 50px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
 /* Big */
@@ -1819,7 +1891,7 @@ ul {
     .contact-content form {
         display: grid;
         grid-template-columns: 1fr;
-        grid-template-rows: repeat(9, 1fr);
+        grid-template-rows: repeat(9, 1fr, 2fr);
         gap: 5%;
         grid-template-areas: 
             "c-name-label"
@@ -1835,6 +1907,25 @@ ul {
             "c-textarea"
 
             "c-button";
+        padding-bottom: 50%
+    }
+
+}
+
+/* Small Mobile */
+@media screen and (max-width: 500px) {
+
+    .contact-content form {
+        padding-bottom: 60%
+    }
+
+}
+
+/* Small Mobile */
+@media screen and (max-width: 430px) {
+
+    .contact-content form {
+        padding-bottom: 80%
     }
 
 }
@@ -1848,10 +1939,11 @@ ul {
 
 
 
+
 /* ----------------------- FAQ ----------------------- */
 
 .faq-container {
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
     border-radius: 30px;
     transition: 0.5s;
     border-left: var(--primary) solid 10px;
@@ -1922,6 +2014,10 @@ ul {
         display: grid;
     }
 
+    .faq-container {
+        margin-bottom: 5%;
+    }
+
 }
 
 /* Between */
@@ -1933,6 +2029,10 @@ ul {
         display: grid;
     }
 
+    .faq-answear {
+        padding: 3% 6% 1% 6%;
+    }
+
 }
 
 /* Mobile devices */
@@ -1942,6 +2042,10 @@ ul {
         width: 90%;
         margin: 0 5% 5% 5%;
         display: grid;
+    }
+
+    .faq-answear {
+        padding: 3% 7% 1% 7%;
     }
 
 }
@@ -2173,6 +2277,7 @@ ul {
 .info-signup {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
     gap: 5%;
 }
 
@@ -2191,6 +2296,7 @@ ul {
 .info-signup-2 iframe {
     border-radius: 15px;
     margin-bottom: 10%;
+    border: solid 5px var(--background-1)
 }
 
 .info-signup-link p,
@@ -2250,6 +2356,10 @@ ul {
     .info-signup-link .home-signup-button-1 {
         width: 40%;
         margin: auto auto 5% auto;
+    }
+
+    #info-contact {
+        margin-top: 15%;
     }
 
 }
