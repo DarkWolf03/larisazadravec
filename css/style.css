@@ -623,10 +623,10 @@ footer a:hover {
     }
     .welcome-about-4 {
         grid-area: wlc-ab-kwf23-img;
-        background-image: url('../images/kwf_01.jpg');
+        background-image: url('../images/kwf_02.jpg');
         background-repeat: no-repeat;
         background-size: cover;
-        background-position: center;
+        background-position: bottom;
     }
     .welcome-about-5 {
         grid-area: wlc-ab-kwf25;
@@ -982,7 +982,7 @@ footer a:hover {
         grid-area: about-introduction-1;
     }
     .about-introduction-2 {
-        background-image: url('../images/BoomShakaLaka_01.png');
+        background-image: url('../images/BoomShakaLaka_02.png');
         background-repeat: no-repeat;
         background-size: cover;
         background-position: bottom;
@@ -1059,6 +1059,37 @@ footer a:hover {
     border-radius: 15px;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.658);
 }
+
+
+
+#about-video-promo {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    background: linear-gradient(90deg, var(--dark), var(--mid), var(--dark));
+    gap: 3%;
+    margin-bottom: 0%;
+    padding-bottom: 5%;
+}
+.about-video-promo {
+    background-color: var(--background-2);
+    border-radius: 15px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.4);
+    transition: 0.5s;
+    border: solid 10px var(--background-2);
+    height: 22vh
+}
+
+.about-video-promo:hover {
+    transform: scale(1.05);
+    transition: 0.2s;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.6);
+}
+
+#about-video-promo iframe {
+    border-radius: 15px;
+}
+
 
 
 .about-motivation-bg {
@@ -1183,6 +1214,13 @@ footer a:hover {
 /* Tablets */
 @media screen and (max-width: 1124px) {
 
+    #about-video-promo {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        padding-top: 10%;
+        padding-bottom: 15%;
+    }
+
     #about-kwf {
         grid-template-columns: 1fr 1fr;
         grid-template-areas: 
@@ -1256,6 +1294,12 @@ footer a:hover {
         min-height: 30vh;
     }
 
+    #about-video-promo {
+        grid-template-columns: 1fr 1fr;
+        padding-top: 10%;
+        padding-bottom: 30%;
+    }
+
     #about-kwf {
         grid-template-columns: 1fr;
         grid-template-rows: 3fr 2fr 3fr 2fr;
@@ -1286,6 +1330,11 @@ footer a:hover {
 
     #about-intro h1 {
         padding-top: 50%;
+    }
+
+
+    #about-video-promo {
+        display: none;
     }
 
     .about-motivation-container {
@@ -1563,10 +1612,10 @@ ul {
 }
 
 .blog-content-2 {
-    background-image: url('../images/BoomShakaLaka_01.png');
+    background-image: url('../images/itzy-dance.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: bottom;
+    background-position: center;
     border-radius: 0 20px 20px 0;
 }
 
